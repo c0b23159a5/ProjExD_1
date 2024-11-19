@@ -22,14 +22,22 @@ def main():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed()
         key_lst = pg.key.get_pressed()
+        spped_x,speed_y =-1,0
+        
         if key_lst[pg.K_UP]:
-            kk_rect.move_ip(0, -1)
-        if key_lst[pg.K_DOWN]:
-            kk_rect.move_ip(0, 1)
+            speed_y += -1
+            # kk_rect.move_ip(0, -1)
+        elif key_lst[pg.K_DOWN]:
+            speed_y += 1
+            # kk_rect.move_ip(0, 1)
         if key_lst[pg.K_LEFT]:
-            kk_rect.move_ip(-1, 0)
-        if key_lst[pg.K_RIGHT]:
-            kk_rect.move_ip(1, 0)
+            spped_x += -1
+            # kk_rect.move_ip(-1, 0)
+        elif key_lst[pg.K_RIGHT]:
+            spped_x += 2
+            # kk_rect.move_ip(1, 0)
+        kk_rect.move_ip(spped_x,speed_y)
+
         background_image_frame_move = -(tmr%3200)
         screen.blit(bg_img, [background_image_frame_move, 0])
         screen.blit(bg_img1, [background_image_frame_move+1600, 0])
