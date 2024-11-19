@@ -23,7 +23,6 @@ def main():
         key_lst = pg.key.get_pressed()
         key_lst = pg.key.get_pressed()
         spped_x,speed_y =-1,0
-        
         if key_lst[pg.K_UP]:
             speed_y += -1
             # kk_rect.move_ip(0, -1)
